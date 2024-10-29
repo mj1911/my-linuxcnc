@@ -72,7 +72,7 @@
     <item row="3" column="0" colspan="3">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>3</number>
+       <number>9</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -435,7 +435,7 @@
           </widget>
          </item>
          <item row="1" column="2">
-          <widget class="QLabel" name="rapid_override_lb">
+          <widget class="QLabel" name="rapidrate_lb">
            <property name="text">
             <string>TextLabel</string>
            </property>
@@ -1164,13 +1164,6 @@
              </property>
             </widget>
            </item>
-           <item row="1" column="3">
-            <widget class="QLabel" name="tool_zoffset_lb">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="1">
             <widget class="QLabel" name="tool_aoffset_lb">
              <property name="text">
@@ -1185,13 +1178,6 @@
              </property>
             </widget>
            </item>
-           <item row="2" column="3">
-            <widget class="QLabel" name="tool_coffset_lb">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-           </item>
            <item row="3" column="1">
             <widget class="QLabel" name="tool_uoffset_lb">
              <property name="text">
@@ -1201,13 +1187,6 @@
            </item>
            <item row="3" column="2">
             <widget class="QLabel" name="tool_voffset_lb">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-           </item>
-           <item row="3" column="3">
-            <widget class="QLabel" name="tool_woffset_lb">
              <property name="text">
               <string>TextLabel</string>
              </property>
@@ -1234,13 +1213,6 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="3">
-            <widget class="QLabel" name="tool_orientation_lb">
-             <property name="text">
-              <string>TextLabel</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="0">
             <widget class="QLabel" name="label_41">
              <property name="text">
@@ -1259,6 +1231,41 @@
             <widget class="QLabel" name="label_43">
              <property name="text">
               <string>Tool</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="tool_zoffset_lb">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="tool_coffset_lb">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QLabel" name="tool_woffset_lb">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="3">
+            <widget class="QLabel" name="tool_orientation_lb">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="3">
+            <widget class="QLabel" name="tool_comment_lb">
+             <property name="text">
+              <string>TextLabel</string>
              </property>
             </widget>
            </item>
@@ -1514,6 +1521,25 @@
            <string>HAL Buttons</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_34">
+           <item row="4" column="0">
+            <widget class="QLabel" name="test_lb_2">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>test-reader-u32</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_U32</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_IN</string>
+             </property>
+            </widget>
+           </item>
            <item row="0" column="0">
             <widget class="QPushButton" name="pushButton_3">
              <property name="text">
@@ -1522,11 +1548,55 @@
              <property name="function" stdset="0">
               <string>hal_pin</string>
              </property>
-             <property name="pin_0" stdset="0">
-              <string>hal-mdi-01, HAL_BIT, HAL_OUT</string>
-             </property>
              <property name="required" stdset="0">
               <string>homed</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>hal-btn-1</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_BIT</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_OUT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="test_lb">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>test-reader-s32</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_S32</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_IN</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="test_lb_3">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>test-reader-float</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_FLOAT</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_IN</string>
              </property>
             </widget>
            </item>
@@ -1535,12 +1605,62 @@
              <property name="text">
               <string>Just HAL</string>
              </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>just-hal-btn</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_BIT</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_OUT</string>
+             </property>
             </widget>
            </item>
            <item row="2" column="0">
             <widget class="QPushButton" name="pushButton_5">
              <property name="text">
               <string>More Hal</string>
+             </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>more-hal-btn</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_BIT</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_OUT</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QPushButton" name="test_btn">
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="test_lb_4">
+             <property name="text">
+              <string>TextLabel</string>
+             </property>
+             <property name="function" stdset="0">
+              <string>hal_pin</string>
+             </property>
+             <property name="pin_name" stdset="0">
+              <string>test-reader-bit</string>
+             </property>
+             <property name="hal_type" stdset="0">
+              <string>HAL_BIT</string>
+             </property>
+             <property name="hal_dir" stdset="0">
+              <string>HAL_IN</string>
              </property>
             </widget>
            </item>
@@ -2454,6 +2574,9 @@
     <addaction name="separator"/>
     <addaction name="actionClear_MDI_History"/>
     <addaction name="actionCopy_MDI_History"/>
+    <addaction name="actionHoming"/>
+    <addaction name="actionUnhoming"/>
+    <addaction name="actionClear_Offsets"/>
    </widget>
    <widget class="QMenu" name="menuProgams">
     <property name="title">
@@ -2697,6 +2820,21 @@
   <action name="actionOverlay">
    <property name="text">
     <string>Overlay</string>
+   </property>
+  </action>
+  <action name="actionHoming">
+   <property name="text">
+    <string>Homing</string>
+   </property>
+  </action>
+  <action name="actionUnhoming">
+   <property name="text">
+    <string>Unhoming</string>
+   </property>
+  </action>
+  <action name="actionClear_Offsets">
+   <property name="text">
+    <string>Clear Offsets</string>
    </property>
   </action>
  </widget>

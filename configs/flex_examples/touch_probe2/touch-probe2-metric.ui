@@ -89,12 +89,6 @@
      <property name="text">
       <string/>
      </property>
-     <property name="function" stdset="0">
-      <string>mdi</string>
-     </property>
-     <property name="command" stdset="0">
-      <string>o&lt;p_tool_m&gt; call</string>
-     </property>
     </widget>
     <widget class="QPushButton" name="probe_workpiece_height">
      <property name="geometry">
@@ -1653,9 +1647,9 @@
    <widget class="QPushButton" name="power_pb">
     <property name="geometry">
      <rect>
-      <x>90</x>
+      <x>115</x>
       <y>355</y>
-      <width>76</width>
+      <width>91</width>
       <height>27</height>
      </rect>
     </property>
@@ -1682,9 +1676,9 @@
    <widget class="QPushButton" name="estop_pb">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>5</x>
       <y>355</y>
-      <width>76</width>
+      <width>106</width>
       <height>27</height>
      </rect>
     </property>

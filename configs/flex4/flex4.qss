@@ -1,0 +1,325 @@
+/* ********** Globals *********************************************** */
+QMainWindow{
+	background-color: rgba(255, 255, 255, 95%);
+	}
+MainWindow{
+	background-color: rgba(255, 255, 255, 95%);
+	}
+centralwidget{
+	background-color: rgba(255, 255, 255, 95%);
+	}
+
+/* ********** Global QWidgets *************************************** */
+QMenu, QLabel, QPlainTextEdit#gcode_pte {
+	background-color: #FAFAFA;  color: #000000;
+	border-color: #051a39;
+	}
+QPlainTextEdit#gcode_pte {
+    border: 1px solid black;
+   	}
+QPlainTextEdit#errors_pte {
+	background-color: rgba(192, 0, 0, 20%);  color: white;
+	/*background-color: #121212; color: #ffffff; */
+    border: 1px solid black;
+	}
+QPlainTextEdit {
+    border: 1px solid gray;
+    border-radius: 3px;
+	}
+
+QListWidget, QLineEdit, QComboBox {
+	background-color: #FAFAFA;  color: #000000;
+	border-color: #051a39;
+	}
+
+QTabBar, QToolButton, QAbstractSpinBox {
+	background-color: #FAFAFA;  color: #000000;
+	border-color: #051a39;
+	}
+
+QTabWidget, QTabBar {
+	background-color: #FAFAFA;  color: #000000;
+	border-color: #051a39;
+	}
+
+/* ********** Menu ************************************************** */
+QMenu {
+    border: 1px solid black;
+	}
+QMenu::separator {
+    height: 2px;
+    background: lightblue;
+    margin-left: 3px;
+    margin-right: 3px;
+	}
+QMenu::item:selected{
+	background-color: rgba(255, 255, 255, 95%);  color: black;
+	border: none;
+	}
+QMenu::item:!selected{
+	background-color: white;  color: black;
+	border: none;
+	}
+QMenu::item:disabled {
+	background-color: white;  color: darkgray;
+	border: none;
+	}
+QMenu::icon:checked { /* appearance of a 'checked' icon */
+    background-color: white;
+    border: 1px inset black;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+	}
+QMenu::indicator {
+    width: 13px;
+    height: 13px;
+	}
+QMenuBar {
+    background-color: #FAFAFA;  color: black;
+    spacing: 3px;
+	border: black;
+	/* border-spacing: 3px; */
+	}
+
+QListWidget {
+    border: 1px solid black;
+    border-radius: 3px;
+	}
+/*	
+QCheckBox {
+	background-color: rgba(12, 12, 12, 90%);  color: white;
+    border: 1px solid white;
+	}
+*/
+QGroupBox {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #FAFAFA;  color: black;
+	}
+
+QLineEdit{
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: #FAFAFA;  color: black;
+	}
+
+QDoubleSpinBox, QSpinbox, QLabel#spindle_actual_speed_lb {
+/* QSlider */
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px 1px 1px 1px;
+	}
+
+QPushButton {
+	background-color: rgba(255, 255, 255, 95%);
+/*	min-height: 50px; */
+/*	min-width: 50px; */
+	min-height: 35px;
+	min-width: 35px;
+	border: 0px solid rgba(128, 128, 128, 100%);
+	border-style: outset;
+	border-width: 3px;
+	border-radius: 10px;
+	margin-bottom: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	}
+
+QToolButton { /* all types of tool buttons */
+	background-color: rgba(255, 255, 255, 95%);
+	min-width: 75px;
+	min-height: 50px;
+	border: 2px solid #000000;
+	border-radius: 10px;
+	}
+
+/* ********** Spin Box ********************************************** */
+QAbstractSpinBox {
+	min-height: 50px;
+	}
+QAbstractSpinBox::up-button {
+	min-width: 50px;
+	}
+QAbstractSpinBox::down-button {
+	min-width: 50px;
+	}
+
+/* ********** General Buttons *************************************** */
+/*
+QPushButton:hover {
+	background-color: rgba(0, 192, 0, 40%);  color: white;
+	border: none;
+	}
+QPushButton:pressed {  
+	background-color: rgba(0, 192, 0, 40%);  color: white;
+	border: none;
+	/*	background-color: rgba(0, 192, 0, 80%); color: white; border: none; */
+/*     border-style: inset;
+    border-width: 2px;
+	}
+QPushButton:checked {
+	background-color: rgba(0, 192, 0, 40%);
+	border: none;
+	/* background-color: rgba(0, 192, 0, 90%); border: none; */
+/*	border-style: inset;
+	}
+QPushButton:unchecked {
+	background-color: darkgray; 
+	border: none;
+	border-style: inset;
+	}
+*/
+/* ********** General Tabs ****************************************** */
+QTabWidget::pane { /* The tab widget frame */
+    /* does nothing   background-color: rgba(255, 255, 255, 95%);  */
+/*    border: 1px solid #000000; */
+    border-left: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+/*	border-radius: 5px solid #000000; */
+/*    border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+	border-top-right-radius: 5px;
+*/
+    position: absolute;
+/*    top: -0.05em;  /* top: -0.5em; */
+	} 
+QTabWidget::tab-bar {
+    alignment: left;
+    /* does nothing   background-color: rgba(255, 255, 255, 0%); */
+	}
+QTabBar::tab {
+	background-color: rgba(255, 255, 255, 95%);
+    border-bottom-color: #000000; 
+	border: 1px solid #000000;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	min-height: 30px; /*	min-height: 50px; */
+    min-width: 30px;  /* min-width: 8ex; */
+    padding: 1px;
+	}
+QTabBar::tab:selected {
+	background-color: rgba(0, 192, 0, 40%);  color: black;
+/*	border-color: #000000; */
+    border-bottom-color: #fafafa;
+	}
+
+/* ********** Sliders *********************************************** */
+QSlider::groove:horizontal {
+    /* border: 1px solid; */
+    height: 15px;
+    margin: 0px;
+    }
+QSlider::handle:horizontal {
+	background-color: rgba(0, 0, 192, 60%);
+	/*	background-color: rgba(192, 192, 192, 80%); */
+    /* border: 1px solid; */
+    height: 40px;
+    width: 50px;
+    margin: -15px -10px;
+    }
+
+/* ********** Power BICOLOR ***************************************** */
+QPushButton#power_pb {
+	background-color: rgba(192, 0, 0, 30%);  color: black;
+	}
+QPushButton#power_pb:pressed {
+	background-color: rgba(0, 192, 0, 80%);  color: black;
+	}
+
+/* ********** E-Stop BICOLOR **************************************** */
+QPushButton#estop_pb {
+	background-color: rgba(192, 0, 0, 80%);  color: black;
+	}
+QPushButton#estop_pb:pressed {
+	background-color: rgba(192, 192, 0, 80%);  color: black;
+	}
+
+/* ********** Op-Stop RED ******************************************* */
+QPushButton#optional_stop_pb {
+	background-color: rgba(192, 0, 0, 30%);  color: black;
+	}
+QPushButton#optional_stop_pb:pressed {
+	background-color: rgba(192, 0, 0, 80%);  color: black;
+	}
+
+/* ********** Run GREEN ********************************************* */
+QPushButton#run_pb {
+	background-color: rgba(0, 192, 0, 30%);  color: black;
+	}
+QPushButton#run_pb:pressed {
+	background-color: rgba(0, 192, 0, 80%);  color: black; 
+	}
+/* above doesn't seem to do anything... try this: */
+/* QPushButton#run_pb:on {
+	background-color: rgba(0, 192, 0, 80%);  color: black; 
+	}
+*/
+/* ********** Pause YELLOW ****************************************** */
+QPushButton#pause_pb {
+	background-color: rgba(192, 192, 0, 30%);  color: black;
+	}
+QPushButton#pause_pb:pressed {
+	background-color: rgba(192, 192, 0, 80%);  color: black;
+	}
+
+/* ********** Stop RED ********************************************** */
+QPushButton#stop_pb {
+	background-color: rgba(192, 0, 0, 30%);  color: black;
+	}
+QPushButton#stop_pb:pressed {
+	background-color: rgba(192, 0, 0, 80%);  color: black; 
+	}
+
+/* ********** Quit RED ********************************************** */
+QPushButton#quit_pb {
+	background-color: rgba(192, 0, 0, 30%);  color: black;
+	}
+QPushButton#quit_pb:pressed {
+	background-color: rgba(192, 0, 0, 100%);  color: black;
+	}
+
+/* ********** Tool Change Combo Box ********************************* */
+QComboBox#tool_change_cb::item:selected{
+	background-color: rgba(192, 192, 192, 90%);  color: black;
+	}
+QComboBox#tool_change_cb::item:!selected{
+	background-color: black;  color: white;
+	}
+
+/* Widget names for actions...
+flex_Open
+flex_Edit
+flex_Reload
+flex_Save_As
+flex_Edit_Tool_Table
+flex_Reload_Tool_Table
+flex_Ladder_Editor
+flex_Quit
+flex_E_Stop
+flex_Power
+flex_Run
+flex_Run_From_Line
+flex_Step
+flex_Pause
+flex_Resume
+flex_Stop
+flex_Clear_MDI_History
+flex_Copy_MDI_History
+flex_Show_HAL
+flex_HAL_Meter
+flex_HAL_Scope
+flex_About
+*/
+
+/* _pb properties
+hover
+pressed
+released
+clicked
+on / off
+*/

@@ -1,0 +1,7 @@
+# ##################################################
+# MDI-Commands
+# ##################################################
+
+# was 0 and 1, moved to 8 and 9 in .ini, still no-go
+#net but-zero_vise_xy flexhal.test_mdi_pin8 => halui.mdi-command-08
+#net but-zero_material_xy flexhal.test_mdi_pin9 => halui.mdi-command-09
