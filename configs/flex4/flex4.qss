@@ -1,18 +1,18 @@
 /* ********** Globals *********************************************** */
 QMainWindow{
-	background-color: rgba(255, 255, 255, 95%);
+	background-color: rgba(245, 245, 245, 95%);
 	}
 MainWindow{
-	background-color: rgba(255, 255, 255, 95%);
+	background-color: rgba(245, 245, 245, 95%);
 	}
 centralwidget{
-	background-color: rgba(255, 255, 255, 95%);
+	background-color: rgba(245, 245, 245, 95%);
 	}
 
 /* ********** Global QWidgets *************************************** */
 QMenu, QLabel, QPlainTextEdit#gcode_pte {
-	background-color: #FAFAFA;  color: #000000;
-	border-color: #051a39;
+	background-color: #fafafa;  color: #000000;
+	border-color: #ff0000; /* border-color: #051a39; */
 	}
 QPlainTextEdit#gcode_pte {
     border: 1px solid black;
@@ -28,18 +28,18 @@ QPlainTextEdit {
 	}
 
 QListWidget, QLineEdit, QComboBox {
-	background-color: #FAFAFA;  color: #000000;
-	border-color: #051a39;
+	background-color: #fafafa;  color: #000000;
+	border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 QTabBar, QToolButton, QAbstractSpinBox {
-	background-color: #FAFAFA;  color: #000000;
-	border-color: #051a39;
+	background-color: #fafafa;  color: #000000;
+	border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 QTabWidget, QTabBar {
-	background-color: #FAFAFA;  color: #000000;
-	border-color: #051a39;
+	background-color: #fafafa;  color: #000000;
+	border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 /* ********** Menu ************************************************** */
@@ -53,7 +53,7 @@ QMenu::separator {
     margin-right: 3px;
 	}
 QMenu::item:selected{
-	background-color: rgba(255, 255, 255, 95%);  color: black;
+	background-color: rgba(255, 255, 255, 95%);  color: blue;
 	border: none;
 	}
 QMenu::item:!selected{
@@ -61,7 +61,7 @@ QMenu::item:!selected{
 	border: none;
 	}
 QMenu::item:disabled {
-	background-color: white;  color: darkgray;
+	background-color: white;  color: gray;
 	border: none;
 	}
 QMenu::icon:checked { /* appearance of a 'checked' icon */
@@ -78,12 +78,13 @@ QMenu::indicator {
     height: 13px;
 	}
 QMenuBar {
-    background-color: #FAFAFA;  color: black;
+    background-color: #fafafa;  color: black;
     spacing: 3px;
 	border: black;
 	/* border-spacing: 3px; */
 	}
 
+/* ****************** Others ************************* */
 QListWidget {
     border: 1px solid black;
     border-radius: 3px;
@@ -97,13 +98,13 @@ QCheckBox {
 QGroupBox {
     border: 1px solid black;
     border-radius: 5px;
-    background-color: #FAFAFA;  color: black;
+    background-color: #ffffff;  color: black;
 	}
 
 QLineEdit{
     border: 1px solid black;
     border-radius: 3px;
-    background-color: #FAFAFA;  color: black;
+    background-color: #fafafa;  color: black;
 	}
 
 QDoubleSpinBox, QSpinbox, QLabel#spindle_actual_speed_lb {
@@ -112,11 +113,9 @@ QDoubleSpinBox, QSpinbox, QLabel#spindle_actual_speed_lb {
     border-radius: 3px;
     padding: 1px 1px 1px 1px;
 	}
-
+/*
 QPushButton {
 	background-color: rgba(255, 255, 255, 95%);
-/*	min-height: 50px; */
-/*	min-width: 50px; */
 	min-height: 35px;
 	min-width: 35px;
 	border: 0px solid rgba(128, 128, 128, 100%);
@@ -124,8 +123,26 @@ QPushButton {
 	border-width: 3px;
 	border-radius: 10px;
 	margin-bottom: 1px;
-	padding-right: 10px;
-	padding-left: 10px;
+	padding-right: 1px;
+	padding-left: 1px;
+	}
+*/
+QPushButton {
+	min-height: 35px;
+	min-width: 35px;
+	margin: 2px;
+	border: 0px solid rgba(128, 128, 128, 100%);
+	border-width: 2px;
+	border-style: outset;
+	border-radius: 5px;
+	/*background-color: rgba(0, 96, 192, 60%);*/
+	background-color: rgba(255, 255, 255, 95%);
+	background-position: center;
+	background-origin: content;
+	/* background-clip: padding; */
+	background-repeat: no-repeat;
+	/*color: lightgreen;*/
+	color: black;
 	}
 
 QToolButton { /* all types of tool buttons */
@@ -175,8 +192,8 @@ QPushButton:unchecked {
 /* ********** General Tabs ****************************************** */
 QTabWidget::pane { /* The tab widget frame */
     /* does nothing   background-color: rgba(255, 255, 255, 95%);  */
-/*    border: 1px solid #000000; */
-    border-left: 1px solid #000000;
+    border: 1px solid #000000; 
+/*    border-left: 1px solid #000000; 
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
 /*	border-radius: 5px solid #000000; */
@@ -223,11 +240,20 @@ QSlider::handle:horizontal {
     margin: -15px -10px;
     }
 
+/* NOTES ABOUT BUTTON COLORS *******************************************
+Do NOT set the button state to "checkable" in Designer - flex handles it
+automatically.  Same with "enabled."  If these are set in Designer, this .qss 
+control will NOT work.
+`QPushButton#power_pb:on/off` does NOT seem to work reliably.
+`QPushButton#power_pb` (without a state) DOES work.
+No state and :pressed --> pressed state does NOT work.
+********************************************************************* */
+
 /* ********** Power BICOLOR ***************************************** */
 QPushButton#power_pb {
 	background-color: rgba(192, 0, 0, 30%);  color: black;
 	}
-QPushButton#power_pb:pressed {
+QPushButton#power_pb:on {
 	background-color: rgba(0, 192, 0, 80%);  color: black;
 	}
 
@@ -254,11 +280,7 @@ QPushButton#run_pb {
 QPushButton#run_pb:pressed {
 	background-color: rgba(0, 192, 0, 80%);  color: black; 
 	}
-/* above doesn't seem to do anything... try this: */
-/* QPushButton#run_pb:on {
-	background-color: rgba(0, 192, 0, 80%);  color: black; 
-	}
-*/
+
 /* ********** Pause YELLOW ****************************************** */
 QPushButton#pause_pb {
 	background-color: rgba(192, 192, 0, 30%);  color: black;
@@ -283,6 +305,24 @@ QPushButton#quit_pb:pressed {
 	background-color: rgba(192, 0, 0, 100%);  color: black;
 	}
 
+/* ********** Probe Buttons ***************************************** */
+QPushButton#probe_* {
+	background-color: rgba(192, 0, 0, 30%);  color: black;
+	min-height: 65px;
+	min-width: 65px;
+	border: 0px solid rgba(128, 128, 128, 100%);
+	border-style: outset;
+	border-width: 1px;
+	border-radius: 2px;
+	margin-bottom: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-origin: content;
+	}
+
+
 /* ********** Tool Change Combo Box ********************************* */
 QComboBox#tool_change_cb::item:selected{
 	background-color: rgba(192, 192, 192, 90%);  color: black;
@@ -290,6 +330,148 @@ QComboBox#tool_change_cb::item:selected{
 QComboBox#tool_change_cb::item:!selected{
 	background-color: black;  color: white;
 	}
+
+
+/* ************PROBING ROUTINES ************* */
+/*QPushButton#probe_inXminusYplus {
+	background-image: url(":images/inX-Y+.png");
+	}*/
+QPushButton#probe_inYplus { 
+	background-image: url(":images/inY+.png");
+	}
+/*QPushButton#probe_inXplusYplus {
+	background-image: url(":images/inX+Y+.png");
+	}*/
+QPushButton#probe_inXminus{
+	background-image: url(":images/inX-.png");
+	}
+QPushButton#probe_inhole{
+	background-image: url(":images/inHole.png");
+	}
+QPushButton#probe_inXplus {
+	background-image: url(":images/inX+.png");
+	}
+/*QPushButton#probe_inXminusYminus {
+	background-image: url(":images/inX-Y-.png");
+	}*/
+QPushButton#probe_inYminus {
+	background-image: url(":images/inY-.png");
+	}
+/*QPushButton#probe_inXplusYminus {
+	background-image: url(":images/inX+Y-.png");
+	}*/
+
+/* ************** Distance **************** */
+
+QPushButton#probe_p_lx_in {
+	background-image: url(":images/Lx_in.png");
+	}
+QPushButton#probe_p_lx_out {
+	background-image: url(":images/Lx_out.png");
+	}
+QPushButton#probe_p_ly_in {
+	background-image: url(":images/Ly_in.png");
+	}
+QPushButton#probe_p_ly_out {
+	background-image: url(":images/Ly_out.png");
+	}
+
+/* *********** Angle ********************* */
+QPushButton#probe_p_angle_x_minus {
+	background-image: url(":images/angleX-.png");
+	}
+QPushButton#probe_p_angle_y_minus {
+	background-image: url(":images/angleY-.png");
+	}
+QPushButton#probe_p_angle_x_plus {
+	background-image: url(":images/angleX+.png");
+	}
+QPushButton#probe_p_angle_y_plus {
+	background-image: url(":images/angleY+.png");
+	}
+
+/* ************ flipped angles ************ */
+QPushButton#probe_p_angle_x_minus_flip {
+	background-image: url(":images/angleX-flip.png");
+	}
+QPushButton#probe_p_angle_y_minus_flip {
+	background-image: url(":images/angleY-flip.png");
+	}
+QPushButton#probe_p_angle_x_plus_flip {
+	background-image: url(":images/angleX+flip.png");
+	}
+QPushButton#probe_p_angle_y_plus_flip {
+	background-image: url(":images/angleY+flip.png");
+	}
+
+/* **************************************** */
+
+QPushButton#probe_XminusYplus {
+	background-image: url(":images/X-Y+.png");
+	}
+QPushButton#probe_Yplus {
+	background-image: url(":images/Y+.png");
+	}
+/*QPushButton#probe_XplusYplus {
+	background-image: url(":images/X+Y+.png");
+	}*/
+QPushButton#probe_Xminus{
+	background-image: url(":images/X-.png");
+	}
+QPushButton#probe_wk_center{
+	background-image: url(":images/xy_center.png");
+	}
+QPushButton#probe_Xplus {
+	background-image: url(":images/X+.png");
+	}
+/*QPushButton#probe_XminusYminus {
+	background-image: url(":images/X-Y-.png");
+	}*/
+QPushButton#probe_Yminus {
+	background-image: url(":images/Y-.png");
+	}
+/*QPushButton#probe_XplusYminus {
+	background-image: url(":images/X+Y-.png");
+	}*/	
+QPushButton#probe_workpiece_height {
+	background-image: url(":images/workpiece_height.png");
+	}	
+QPushButton#probe_ts_height {
+	background-image: url(":images/ts_height.png");
+	}	
+/*QPushButton#probe_angleXplus {
+	background-image: url(":images/angleX+.png");
+	}	
+QPushButton#probe_angleXminus {
+	background-image: url(":images/angleX-.png");
+	}
+QPushButton#probe_angleYplus {
+	background-image: url(":images/angleY+.png");
+	}	
+QPushButton#probe_angleYminus {
+	background-image: url(":images/angleY-.png");
+	}*/	
+/*
+QFrame#logo {
+    border: 1px grey;
+    border-radius: 2px;
+    padding: 2px;
+    background-image: url(:images/Flex-probe117.png);
+}
+*/
+QPushButton#probing_enable_pb:enabled:checked {
+	color: white;
+/*	background-color: rgba(192, 0, 0, 80%); */
+	background-color: rgba(0, 192, 0, 80%);
+}
+
+QPushButton#probing_enable_pb:enabled {
+	color: lightgreen;
+	background-color: rgba(0, 96, 192, 60%);
+	/*yellow;*/
+}
+
+
 
 /* Widget names for actions...
 flex_Open
