@@ -12,14 +12,14 @@ centralwidget{
 /* ********** Global QWidgets *************************************** */
 QMenu, QLabel, QPlainTextEdit#gcode_pte {
 	background-color: #fafafa;  color: #000000;
-	border-color: #ff0000; /* border-color: #051a39; */
+/*	border-color: #ff0000; /* border-color: #051a39; */
 	}
 QPlainTextEdit#gcode_pte {
     border: 1px solid black;
    	}
 QPlainTextEdit#errors_pte {
 	background-color: rgba(192, 0, 0, 20%);  color: white;
-	/*background-color: #121212; color: #ffffff; */
+	color: #000000;
     border: 1px solid black;
 	}
 QPlainTextEdit {
@@ -29,17 +29,15 @@ QPlainTextEdit {
 
 QListWidget, QLineEdit, QComboBox {
 	background-color: #fafafa;  color: #000000;
-	border-color: #ff0000; /* border-color: #051a39; */
+	/* border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 QTabBar, QToolButton, QAbstractSpinBox {
 	background-color: #fafafa;  color: #000000;
-	border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 QTabWidget, QTabBar {
 	background-color: #fafafa;  color: #000000;
-	border-color: #ff0000; /* border-color: #051a39; */
 	}
 
 /* ********** Menu ************************************************** */
@@ -64,7 +62,7 @@ QMenu::item:disabled {
 	background-color: white;  color: gray;
 	border: none;
 	}
-QMenu::icon:checked { /* appearance of a 'checked' icon */
+QMenu::icon:checked {
     background-color: white;
     border: 1px inset black;
     position: absolute;
@@ -113,6 +111,13 @@ QDoubleSpinBox, QSpinbox, QLabel#spindle_actual_speed_lb {
     border-radius: 3px;
     padding: 1px 1px 1px 1px;
 	}
+
+/************** Fix for QLabels and BOLD font? *************/
+QLabel#dro_lb_x, QLabel#dro_lb_y, QLabel#dro_lb_z  {
+	font: 500 20pt "DSEG7 Modern";
+	}
+
+
 /*
 QPushButton {
 	background-color: rgba(255, 255, 255, 95%);
@@ -243,71 +248,74 @@ QSlider::handle:horizontal {
 /* NOTES ABOUT BUTTON COLORS *******************************************
 Do NOT set the button state to "checkable" in Designer - flex handles it
 automatically.  Same with "enabled."  If these are set in Designer, this .qss 
-control will NOT work.
+color will NOT work.
 `QPushButton#power_pb:on/off` does NOT seem to work reliably.
 `QPushButton#power_pb` (without a state) DOES work.
 No state and :pressed --> pressed state does NOT work.
+IS THE ANSWER TO USE :ENABLED AND :ENABLED:CHECKED?
 ********************************************************************* */
 
+/* recent changes sort-of work... */
+
 /* ********** Power BICOLOR ***************************************** */
-QPushButton#power_pb {
-	background-color: rgba(192, 0, 0, 30%);  color: black;
+QPushButton#power_pb:enabled {
+	background-color: rgba(192, 0, 0, 30%);
 	}
-QPushButton#power_pb:on {
-	background-color: rgba(0, 192, 0, 80%);  color: black;
+QPushButton#power_pb:enabled:checked {
+	background-color: rgba(0, 192, 0, 80%);
 	}
 
 /* ********** E-Stop BICOLOR **************************************** */
-QPushButton#estop_pb {
-	background-color: rgba(192, 0, 0, 80%);  color: black;
+QPushButton#estop_pb:enabled {
+	background-color: rgba(192, 0, 0, 80%);
 	}
-QPushButton#estop_pb:pressed {
-	background-color: rgba(192, 192, 0, 80%);  color: black;
+QPushButton#estop_pb:enabled:checked {
+	background-color: rgba(192, 192, 0, 80%);
 	}
 
 /* ********** Op-Stop RED ******************************************* */
-QPushButton#optional_stop_pb {
-	background-color: rgba(192, 0, 0, 30%);  color: black;
+QPushButton#optional_stop_pb:enabled {
+	background-color: rgba(192, 0, 0, 30%);
 	}
-QPushButton#optional_stop_pb:pressed {
-	background-color: rgba(192, 0, 0, 80%);  color: black;
+QPushButton#optional_stop_pb:enabled:checked {
+	background-color: rgba(192, 0, 0, 80%);
 	}
 
 /* ********** Run GREEN ********************************************* */
-QPushButton#run_pb {
-	background-color: rgba(0, 192, 0, 30%);  color: black;
+QPushButton#run_pb:enabled {
+	background-color: rgba(0, 192, 0, 40%);
 	}
-QPushButton#run_pb:pressed {
-	background-color: rgba(0, 192, 0, 80%);  color: black; 
+QPushButton#run_pb:enabled:checked {
+	background-color: rgba(0, 192, 0, 80%);
 	}
 
 /* ********** Pause YELLOW ****************************************** */
-QPushButton#pause_pb {
-	background-color: rgba(192, 192, 0, 30%);  color: black;
+QPushButton#pause_pb:enabled {
+	background-color: rgba(192, 192, 0, 30%);
 	}
-QPushButton#pause_pb:pressed {
-	background-color: rgba(192, 192, 0, 80%);  color: black;
+QPushButton#pause_pb:enabled:checked {
+	background-color: rgba(192, 192, 0, 80%);
 	}
 
 /* ********** Stop RED ********************************************** */
-QPushButton#stop_pb {
-	background-color: rgba(192, 0, 0, 30%);  color: black;
+QPushButton#stop_pb:enabled {
+	background-color: rgba(192, 0, 0, 30%);
 	}
-QPushButton#stop_pb:pressed {
-	background-color: rgba(192, 0, 0, 80%);  color: black; 
+QPushButton#stop_pb:enabled:checked {
+	background-color: rgba(192, 0, 0, 80%);
 	}
 
 /* ********** Quit RED ********************************************** */
-QPushButton#quit_pb {
-	background-color: rgba(192, 0, 0, 30%);  color: black;
+QPushButton#quit_pb:enabled {
+	background-color: rgba(192, 0, 0, 30%);
 	}
-QPushButton#quit_pb:pressed {
-	background-color: rgba(192, 0, 0, 100%);  color: black;
+QPushButton#quit_pb:enabled:checked {
+	background-color: rgba(192, 0, 0, 100%);
 	}
 
 /* ********** Probe Buttons ***************************************** */
-QPushButton#probe_* {
-	background-color: rgba(192, 0, 0, 30%);  color: black;
+QPushButton#probe_** {
+	background-color: rgba(192, 0, 0, 30%);
 	min-height: 65px;
 	min-width: 65px;
 	border: 0px solid rgba(128, 128, 128, 100%);
@@ -324,15 +332,15 @@ QPushButton#probe_* {
 
 
 /* ********** Tool Change Combo Box ********************************* */
-QComboBox#tool_change_cb::item:selected{
+QComboBox#tool_change_cb::item:selected {
 	background-color: rgba(192, 192, 192, 90%);  color: black;
 	}
-QComboBox#tool_change_cb::item:!selected{
+QComboBox#tool_change_cb::item:!selected {
 	background-color: black;  color: white;
 	}
 
 
-/* ************PROBING ROUTINES ************* */
+/* ************PROBING ROUTINES - NOT WORKING ************* */
 /*QPushButton#probe_inXminusYplus {
 	background-image: url(":images/inX-Y+.png");
 	}*/
@@ -342,10 +350,10 @@ QPushButton#probe_inYplus {
 /*QPushButton#probe_inXplusYplus {
 	background-image: url(":images/inX+Y+.png");
 	}*/
-QPushButton#probe_inXminus{
+QPushButton#probe_inXminus {
 	background-image: url(":images/inX-.png");
 	}
-QPushButton#probe_inhole{
+QPushButton#probe_inhole {
 	background-image: url(":images/inHole.png");
 	}
 QPushButton#probe_inXplus {
@@ -415,10 +423,10 @@ QPushButton#probe_Yplus {
 /*QPushButton#probe_XplusYplus {
 	background-image: url(":images/X+Y+.png");
 	}*/
-QPushButton#probe_Xminus{
+QPushButton#probe_Xminus {
 	background-image: url(":images/X-.png");
 	}
-QPushButton#probe_wk_center{
+QPushButton#probe_wk_center {
 	background-image: url(":images/xy_center.png");
 	}
 QPushButton#probe_Xplus {
@@ -459,18 +467,18 @@ QFrame#logo {
     background-image: url(:images/Flex-probe117.png);
 }
 */
+
+/* Note A QPushButton with checkable set to true does NOT have an unchecked pseudo-state */
+
 QPushButton#probing_enable_pb:enabled:checked {
-	color: white;
-/*	background-color: rgba(192, 0, 0, 80%); */
-	background-color: rgba(0, 192, 0, 80%);
+        color: white;
+        background-color: red;
 }
 
 QPushButton#probing_enable_pb:enabled {
-	color: lightgreen;
-	background-color: rgba(0, 96, 192, 60%);
-	/*yellow;*/
+        color: green;
+        background-color: yellow;
 }
-
 
 
 /* Widget names for actions...
