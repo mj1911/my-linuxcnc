@@ -45,13 +45,13 @@
   </property>
   <property name="styleSheet">
    <string notr="true">/* ********** Globals *********************************************** */
-QMainWindow{
+QMainWindow {
 	background-color: rgba(245, 245, 245, 95%);
 	}
-MainWindow{
+MainWindow {
 	background-color: rgba(245, 245, 245, 95%);
 	}
-centralwidget{
+centralwidget {
 	background-color: rgba(245, 245, 245, 95%);
 	}
 
@@ -59,7 +59,7 @@ centralwidget{
 QMenu, QLabel, QPlainTextEdit#gcode_pte {
 	background-color: #fafafa;  color: #000000;
 /*	border-color: #ff0000; /* border-color: #051a39; */
-	font: 75 12pt &quot;Bitstream Charter&quot;;
+/*	font: 75 12pt &quot;Bitstream Charter&quot;; */
 	}
 QPlainTextEdit#gcode_pte {
     border: 1px solid black;
@@ -97,11 +97,11 @@ QMenu::separator {
     margin-left: 3px;
     margin-right: 3px;
 	}
-QMenu::item:selected{
+QMenu::item:selected {
 	background-color: rgba(255, 255, 255, 95%);  color: blue;
 	border: none;
 	}
-QMenu::item:!selected{
+QMenu::item:!selected {
 	background-color: white;  color: black;
 	border: none;
 	}
@@ -146,7 +146,7 @@ QGroupBox {
     background-color: #ffffff;  color: black;
 	}
 
-QLineEdit{
+QLineEdit {
     border: 1px solid black;
     border-radius: 3px;
     background-color: #fafafa;  color: black;
@@ -161,7 +161,7 @@ QDoubleSpinBox, QSpinbox, QLabel#spindle_actual_speed_lb {
 
 /************** Fix for QLabels and BOLD font? *************/
 QLabel#dro_lb_x, QLabel#dro_lb_y, QLabel#dro_lb_z  {
-	font: 500 20pt &quot;DSEG7 Modern&quot;;
+	font: 800 20pt &quot;DSEG7 Modern&quot;;
 	}
 
 
@@ -183,18 +183,22 @@ QPushButton {
 	min-height: 35px;
 	min-width: 35px;
 	margin: 2px;
-	border: 0px solid rgba(128, 128, 128, 100%);
+	border: 0px solid rgba(100, 100, 100, 100%);
 	border-width: 2px;
 	border-style: outset;
 	border-radius: 5px;
 	/*background-color: rgba(0, 96, 192, 60%);*/
-	background-color: rgba(255, 255, 255, 95%);
+	background-color: rgba(255, 255, 255, 100%);
 	background-position: center;
 	background-origin: content;
 	/* background-clip: padding; */
 	background-repeat: no-repeat;
 	/*color: lightgreen;*/
 	color: black;
+	}
+
+QPushButton::disabled {
+	background-color: rgba(80, 80, 80, 30%);
 	}
 
 QToolButton { /* all types of tool buttons */
@@ -278,19 +282,49 @@ QTabBar::tab:selected {
 	}
 
 /* ********** Sliders *********************************************** */
+/*
 QSlider::groove:horizontal {
-    /* border: 1px solid; */
+    /* border: 1px solid; *
     height: 15px;
     margin: 0px;
     }
 QSlider::handle:horizontal {
 	background-color: rgba(0, 0, 192, 60%);
 	/*	background-color: rgba(192, 192, 192, 80%); */
-    /* border: 1px solid; */
+    /* border: 1px solid; *
     height: 40px;
     width: 50px;
     margin: -15px -10px;
     }
+*/
+
+QSlider::groove:horizontal {
+	border-radius: 1px;
+	height: 5px;
+	margin: 0px;
+	background-color: rgb(52, 59, 72);
+	}
+/*QSlider::groove:horizontal:hover {
+    background-color: rgb(55, 62, 76);
+}*/
+QSlider::handle:horizontal {
+    background-color: rgb(85, 170, 255);
+    border: none;
+    height: 30px;
+    width: 30px;
+    margin: -20px 0;
+    border-radius: 20px;
+    padding: -20px 0px;
+}
+/*QSlider::handle:horizontal:hover {
+    background-color: rgb(155, 180, 255);
+}*/
+QSlider::handle:horizontal:pressed {
+    background-color: rgb(65, 255, 195);
+}
+
+
+
 
 /* NOTES ABOUT BUTTON COLORS *******************************************
 Do NOT set the button state to &quot;checkable&quot; in Designer - flex handles it
@@ -302,30 +336,32 @@ No state and :pressed --&gt; pressed state does NOT work.
 IS THE ANSWER TO USE :ENABLED AND :ENABLED:CHECKED?
 ********************************************************************* */
 
-/* recent changes sort-of work... */
-
+/* recent changes sort-of work... no disable/enable though */
+/* JFC... disable/enable work; ::unchecked and ::checked do NOT! */
+/* ********** E-Stop BICOLOR **************************************** */
+/*
+QPushButton#estop_pb:disabled {
+	background-color: rgba(255, 0, 0, 80%);
+	}
+QPushButton#estop_pb::unchecked {
+	background-color: rgba(255, 255, 0, 80%);
+	}
+QPushButton#estop_pb::checked {
+	background-color: rgba(255, 0, 255, 80%);
+	}
+*/
 /* ********** Power BICOLOR ***************************************** */
+/*
 QPushButton#power_pb:disabled {
-	background-color: rgba(192, 0, 0, 30%);
+	background-color: rgba(255, 0, 0, 80%);
 	}
-QPushButton#power_pb:enabled {
-	background-color: rgba(0, 192, 0, 40%);
+QPushButton#power_pb::unchecked {
+	background-color: rgba(0, 0, 192, 80%);
 	}
-QPushButton#power_pb:enabled:checked {
+QPushButton#power_pb::checked {
 	background-color: rgba(0, 192, 0, 80%);
 	}
-
-/* ********** E-Stop BICOLOR **************************************** */
-QPushButton#estop_pb:disabled {
-	background-color: rgba(192, 0, 0, 80%);
-	}
-QPushButton#estop_pb:enabled {
-	background-color: rgba(192, 192, 0, 80%);
-	}
-QPushButton#estop_pb:enabled:checked {
-	background-color: rgba(192, 0, 192, 80%);
-	}
-
+*/
 /* ********** Op-Stop RED ******************************************* */
 QPushButton#optional_stop_pb:enabled {
 	background-color: rgba(192, 0, 0, 30%);
@@ -334,12 +370,12 @@ QPushButton#optional_stop_pb:enabled:checked {
 	background-color: rgba(192, 0, 0, 80%);
 	}
 
-/* ********** Run GREEN ********************************************* */
-QPushButton#run_pb:enabled {
-	background-color: rgba(0, 192, 0, 40%);
+/* ********** Stop RED ********************************************** */
+QPushButton#stop_pb:enabled {
+	background-color: rgba(192, 0, 0, 30%);
 	}
-QPushButton#run_pb:enabled:checked {
-	background-color: rgba(0, 192, 0, 80%);
+QPushButton#stop_pb:enabled:checked {
+	background-color: rgba(192, 0, 0, 80%);
 	}
 
 /* ********** Pause YELLOW ****************************************** */
@@ -350,13 +386,39 @@ QPushButton#pause_pb:enabled:checked {
 	background-color: rgba(192, 192, 0, 80%);
 	}
 
-/* ********** Stop RED ********************************************** */
-QPushButton#stop_pb:enabled {
-	background-color: rgba(192, 0, 0, 30%);
+/* ********** Resume YELLOW ****************************************** */
+QPushButton#resume_pb:enabled {
+	background-color: rgba(192, 192, 0, 30%);
 	}
-QPushButton#stop_pb:enabled:checked {
-	background-color: rgba(192, 0, 0, 80%);
+QPushButton#resume_pb:enabled:checked {
+	background-color: rgba(192, 192, 0, 80%);
 	}
+
+/* ********** Step YELLOW ****************************************** */
+QPushButton#step_pb:enabled {
+	background-color: rgba(192, 192, 0, 30%);
+	}
+QPushButton#step_pb:enabled:checked {
+	background-color: rgba(192, 192, 0, 80%);
+	}
+
+/* ********** Run From Line GREEN *********************************** */
+QPushButton#run_from_line_pb:enabled {
+	background-color: rgba(0, 192, 0, 40%);
+	}
+QPushButton#run_from_line_pb:enabled:checked {
+	background-color: rgba(0, 192, 0, 80%);
+	}
+
+/* ********** Run GREEN ********************************************* */
+QPushButton#run_pb:enabled {
+	background-color: rgba(0, 192, 0, 40%);
+	}
+QPushButton#run_pb:enabled:checked {
+	background-color: rgba(0, 192, 0, 80%);
+	}
+
+
 
 /* ********** Quit RED ********************************************** */
 QPushButton#quit_pb:enabled {
@@ -368,7 +430,8 @@ QPushButton#quit_pb:enabled:checked {
 
 /* ********** Probe Buttons ***************************************** */
 /* QPushButton#probe_** { &lt;-- issue? */
-QPushButton#probe_* {
+/*
+QPushButton#probe_** {
 	background-color: rgba(192, 0, 0, 30%);
 	min-height: 65px;
 	min-width: 65px;
@@ -383,7 +446,7 @@ QPushButton#probe_* {
 	background-position: center;
 	background-origin: content;
 	}
-
+*/
 
 /* ********** Tool Change Combo Box ********************************* */
 QComboBox#tool_change_cb::item:selected {
@@ -395,144 +458,148 @@ QComboBox#tool_change_cb::item:!selected {
 
 
 /* ************PROBING ROUTINES - NOT WORKING ************* */
-/*QPushButton#probe_inXminusYplus {
-	background-image: url(&quot;:images/inX-Y+.png&quot;);
-	}*/
-QPushButton#probe_inYplus { 
-	background-image: url(&quot;:images/inY+.png&quot;);
+
+/* Note a QPushButton with checkable set to true does NOT have an &quot;unchecked&quot; pseudo-state */
+
+QPushButton#probing_enable_pb {
+	color: black;
+	background-color: yellow;
 	}
-/*QPushButton#probe_inXplusYplus {
-	background-image: url(&quot;:images/inX+Y+.png&quot;);
-	}*/
+
+QPushButton#probing_enable_pb::checked {
+	color: white;
+	background-color: red;
+	}
+
+/* *********** outside measurement ****************** */
+
+QPushButton#probe_XminusYplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X-Y+.png&quot;);
+	}
+QPushButton#probe_Yplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Y+.png&quot;);
+	}
+QPushButton#probe_XplusYplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X+Y+.png&quot;);
+	}
+QPushButton#probe_Xminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X-.png&quot;);
+	}
+QPushButton#probe_wk_center {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/xy_center.png&quot;);
+	}
+QPushButton#probe_Xplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X+.png&quot;);
+	}
+QPushButton#probe_XminusYminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X-Y-.png&quot;);
+	}
+QPushButton#probe_Yminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Y-.png&quot;);
+	}
+QPushButton#probe_XplusYminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/X+Y-.png&quot;);
+	}
+
+/* inside measurement */
+
+QPushButton#probe_inXminusYplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX-Y+.png&quot;);
+	}
+QPushButton#probe_inYplus { 
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inY+.png&quot;);
+	}
+QPushButton#probe_inXplusYplus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX+Y+.png&quot;);
+	}
 QPushButton#probe_inXminus {
-	background-image: url(&quot;:images/inX-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX-.png&quot;);
 	}
 QPushButton#probe_inhole {
-	background-image: url(&quot;:images/inHole.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inHole.png&quot;);
 	}
 QPushButton#probe_inXplus {
-	background-image: url(&quot;:images/inX+.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX+.png&quot;);
 	}
-/*QPushButton#probe_inXminusYminus {
-	background-image: url(&quot;:images/inX-Y-.png&quot;);
-	}*/
+QPushButton#probe_inXminusYminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX-Y-.png&quot;);
+	}
 QPushButton#probe_inYminus {
-	background-image: url(&quot;:images/inY-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inY-.png&quot;);
 	}
-/*QPushButton#probe_inXplusYminus {
-	background-image: url(&quot;:images/inX+Y-.png&quot;);
-	}*/
+QPushButton#probe_inXplusYminus {
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/inX+Y-.png&quot;);
+	}
 
 /* ************** Distance **************** */
-
 QPushButton#probe_p_lx_in {
-	background-image: url(&quot;:images/Lx_in.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Lx_in.png&quot;);
 	}
 QPushButton#probe_p_lx_out {
-	background-image: url(&quot;:images/Lx_out.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Lx_out.png&quot;);
 	}
 QPushButton#probe_p_ly_in {
-	background-image: url(&quot;:images/Ly_in.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Ly_in.png&quot;);
 	}
 QPushButton#probe_p_ly_out {
-	background-image: url(&quot;:images/Ly_out.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/Ly_out.png&quot;);
 	}
 
 /* *********** Angle ********************* */
 QPushButton#probe_p_angle_x_minus {
-	background-image: url(&quot;:images/angleX-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleX-.png&quot;);
 	}
 QPushButton#probe_p_angle_y_minus {
-	background-image: url(&quot;:images/angleY-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleY-.png&quot;);
 	}
 QPushButton#probe_p_angle_x_plus {
-	background-image: url(&quot;:images/angleX+.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleX+.png&quot;);
 	}
 QPushButton#probe_p_angle_y_plus {
-	background-image: url(&quot;:images/angleY+.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleY+.png&quot;);
 	}
 
-/* ************ flipped angles ************ */
+/* ************ mirrored angle ************ */
 QPushButton#probe_p_angle_x_minus_flip {
-	background-image: url(&quot;:images/angleX-flip.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleX-flip.png&quot;);
 	}
 QPushButton#probe_p_angle_y_minus_flip {
-	background-image: url(&quot;:images/angleY-flip.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleY-flip.png&quot;);
 	}
 QPushButton#probe_p_angle_x_plus_flip {
-	background-image: url(&quot;:images/angleX+flip.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleX+flip.png&quot;);
 	}
 QPushButton#probe_p_angle_y_plus_flip {
-	background-image: url(&quot;:images/angleY+flip.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/angleY+flip.png&quot;);
 	}
 
-/* **************************************** */
-
-QPushButton#probe_XminusYplus {
-	background-image: url(&quot;:images/X-Y+.png&quot;);
-	}
-QPushButton#probe_Yplus {
-	background-image: url(&quot;:images/Y+.png&quot;);
-	}
-/*QPushButton#probe_XplusYplus {
-	background-image: url(&quot;:images/X+Y+.png&quot;);
-	}*/
-QPushButton#probe_Xminus {
-	background-image: url(&quot;:images/X-.png&quot;);
-	}
-QPushButton#probe_wk_center {
-	background-image: url(&quot;:images/xy_center.png&quot;);
-	}
-QPushButton#probe_Xplus {
-	background-image: url(&quot;:images/X+.png&quot;);
-	}
-/*QPushButton#probe_XminusYminus {
-	background-image: url(&quot;:images/X-Y-.png&quot;);
-	}*/
-QPushButton#probe_Yminus {
-	background-image: url(&quot;:images/Y-.png&quot;);
-	}
-/*QPushButton#probe_XplusYminus {
-	background-image: url(&quot;:images/X+Y-.png&quot;);
-	}*/	
+/* these not present yet */
 QPushButton#probe_workpiece_height {
-	background-image: url(&quot;:images/workpiece_height.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/workpiece_height.png&quot;);
 	}	
 QPushButton#probe_ts_height {
-	background-image: url(&quot;:images/ts_height.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/ts_height.png&quot;);
 	}	
 /*QPushButton#probe_angleXplus {
-	background-image: url(&quot;:images/angleX+.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4images/angleX+.png&quot;);
 	}	
 QPushButton#probe_angleXminus {
-	background-image: url(&quot;:images/angleX-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4images/angleX-.png&quot;);
 	}
 QPushButton#probe_angleYplus {
-	background-image: url(&quot;:images/angleY+.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4images/angleY+.png&quot;);
 	}	
 QPushButton#probe_angleYminus {
-	background-image: url(&quot;:images/angleY-.png&quot;);
+	background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4images/angleY-.png&quot;);
 	}*/	
-/*
+
 QFrame#logo {
     border: 1px grey;
     border-radius: 2px;
     padding: 2px;
-    background-image: url(:images/Flex-probe117.png);
-}
-*/
-
-/* Note A QPushButton with checkable set to true does NOT have an unchecked pseudo-state */
-
-QPushButton#probing_enable_pb:enabled:checked {
-        color: white;
-        background-color: red;
+    background-image: url(&quot;/home/cnc/linuxcnc/configs/flex4/images/FlexGUI-whitebg.png&quot;);
 }
 
-QPushButton#probing_enable_pb:enabled {
-        color: green;
-        background-color: yellow;
-}
 
 
 /* Widget names for actions...
@@ -610,8 +677,8 @@ on / off
      <widget class="QPushButton" name="quit_pb">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>230</y>
+        <x>380</x>
+        <y>970</y>
         <width>87</width>
         <height>43</height>
        </rect>
@@ -705,10 +772,10 @@ on / off
      <widget class="QGroupBox" name="groupBox_12">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>320</x>
         <y>280</y>
-        <width>141</width>
-        <height>361</height>
+        <width>151</width>
+        <height>411</height>
        </rect>
       </property>
       <property name="font">
@@ -728,7 +795,7 @@ on / off
         <rect>
          <x>15</x>
          <y>30</y>
-         <width>96</width>
+         <width>111</width>
          <height>27</height>
         </rect>
        </property>
@@ -784,9 +851,9 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -812,18 +879,18 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>0.000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -859,9 +926,9 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -881,18 +948,18 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>0.000</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -909,15 +976,15 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string>0</string>
@@ -937,9 +1004,9 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -959,9 +1026,9 @@ on / off
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -979,7 +1046,7 @@ on / off
          <x>20</x>
          <y>220</y>
          <width>86</width>
-         <height>27</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -998,14 +1065,64 @@ on / off
         <string>number</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>360</y>
+         <width>51</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Tool:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="tool_in_spindle_lb">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>360</y>
+         <width>71</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_13">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>280</y>
-        <width>296</width>
-        <height>361</height>
+        <width>321</width>
+        <height>411</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -1029,18 +1146,17 @@ on / off
       <widget class="QLabel" name="g5x_index_lb">
        <property name="geometry">
         <rect>
-         <x>250</x>
+         <x>245</x>
          <y>30</y>
-         <width>36</width>
-         <height>19</height>
+         <width>41</width>
+         <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
-         <italic>false</italic>
+         <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
@@ -1055,22 +1171,22 @@ on / off
        <property name="geometry">
         <rect>
          <x>195</x>
-         <y>325</y>
+         <y>380</y>
          <width>91</width>
          <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string>0.000</string>
@@ -1083,16 +1199,16 @@ on / off
        <property name="geometry">
         <rect>
          <x>170</x>
-         <y>295</y>
+         <y>350</y>
          <width>21</width>
          <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1105,16 +1221,16 @@ on / off
        <property name="geometry">
         <rect>
          <x>170</x>
-         <y>265</y>
+         <y>320</y>
          <width>21</width>
          <height>19</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1127,22 +1243,22 @@ on / off
        <property name="geometry">
         <rect>
          <x>195</x>
-         <y>265</y>
+         <y>320</y>
          <width>91</width>
          <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string>0.000</string>
@@ -1155,22 +1271,22 @@ on / off
        <property name="geometry">
         <rect>
          <x>195</x>
-         <y>295</y>
+         <y>350</y>
          <width>91</width>
          <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Box</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <property name="text">
         <string>0.000</string>
@@ -1183,16 +1299,16 @@ on / off
        <property name="geometry">
         <rect>
          <x>170</x>
-         <y>325</y>
+         <y>380</y>
          <width>21</width>
          <height>19</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1204,10 +1320,10 @@ on / off
       <widget class="QFrame" name="frame_3">
        <property name="geometry">
         <rect>
-         <x>105</x>
-         <y>50</y>
-         <width>86</width>
-         <height>191</height>
+         <x>0</x>
+         <y>60</y>
+         <width>81</width>
+         <height>221</height>
         </rect>
        </property>
        <property name="font">
@@ -1222,98 +1338,102 @@ on / off
        <property name="frameShadow">
         <enum>QFrame::Plain</enum>
        </property>
-       <widget class="QPushButton" name="mdi_G54">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>5</y>
-          <width>61</width>
-          <height>43</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Monospace</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>G54</string>
-        </property>
-        <property name="function" stdset="0">
-         <string>mdi</string>
-        </property>
-        <property name="command" stdset="0">
-         <string>G54</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="mdi_G56">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>125</y>
-          <width>61</width>
-          <height>43</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Monospace</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>G56</string>
-        </property>
-        <property name="function" stdset="0">
-         <string>mdi</string>
-        </property>
-        <property name="command" stdset="0">
-         <string>G56</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="mdi_G55">
-        <property name="geometry">
-         <rect>
-          <x>5</x>
-          <y>65</y>
-          <width>61</width>
-          <height>43</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Monospace</family>
-          <pointsize>12</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>G55</string>
-        </property>
-        <property name="function" stdset="0">
-         <string>mdi</string>
-        </property>
-        <property name="command" stdset="0">
-         <string>G55</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_20">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="mdi_G55">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>G55</string>
+          </property>
+          <property name="function" stdset="0">
+           <string>mdi</string>
+          </property>
+          <property name="command" stdset="0">
+           <string>G55</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="mdi_G56">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>G56</string>
+          </property>
+          <property name="function" stdset="0">
+           <string>mdi</string>
+          </property>
+          <property name="command" stdset="0">
+           <string>G56</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="mdi_G54">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>G54</string>
+          </property>
+          <property name="function" stdset="0">
+           <string>mdi</string>
+          </property>
+          <property name="command" stdset="0">
+           <string>G54</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="mdi_G57">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>G57</string>
+          </property>
+          <property name="function" stdset="0">
+           <string>mdi</string>
+          </property>
+          <property name="command" stdset="0">
+           <string>G57</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QLabel" name="label_16">
        <property name="geometry">
         <rect>
-         <x>110</x>
+         <x>100</x>
          <y>30</y>
-         <width>131</width>
-         <height>19</height>
+         <width>141</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -1324,16 +1444,16 @@ on / off
        <property name="geometry">
         <rect>
          <x>25</x>
-         <y>265</y>
+         <y>320</y>
          <width>91</width>
          <height>19</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -1346,9 +1466,9 @@ on / off
        <property name="geometry">
         <rect>
          <x>15</x>
-         <y>290</y>
+         <y>345</y>
          <width>111</width>
-         <height>27</height>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -1370,11 +1490,235 @@ on / off
         <string>number</string>
        </property>
       </widget>
+      <widget class="QGroupBox" name="groupBox_17">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>60</y>
+         <width>70</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>UnHome</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <property name="topMargin">
+         <number>21</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="unhome_all_pb_2">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>All</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="unhome_pb_4">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="unhome_pb_5">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="unhome_pb_3">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Z</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_8">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>71</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>Home</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <property name="topMargin">
+         <number>21</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="home_all_pb">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>All</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="home_pb_0">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="home_pb_1">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="home_pb_2">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Z</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>60</y>
+         <width>71</width>
+         <height>221</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="title">
+        <string>T-Off</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_9">
+        <property name="topMargin">
+         <number>21</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="touchoff_pb_y">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="touchoff_pb_x">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>X</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="touchoff_pb_z">
+          <property name="font">
+           <font>
+            <family>Monospace</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Z</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
      <widget class="QPushButton" name="pushButton_17">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>250</x>
         <y>220</y>
         <width>131</width>
         <height>43</height>
@@ -1399,7 +1743,7 @@ on / off
      <widget class="QPushButton" name="pushButton_8">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>250</x>
         <y>170</y>
         <width>131</width>
         <height>43</height>
@@ -1474,13 +1818,16 @@ on / off
        </item>
       </layout>
      </widget>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QPushButton" name="dis">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>190</y>
-        <width>166</width>
-        <height>66</height>
+        <x>240</x>
+        <y>880</y>
+        <width>61</width>
+        <height>43</height>
        </rect>
       </property>
       <property name="font">
@@ -1489,62 +1836,9 @@ on / off
         <pointsize>12</pointsize>
        </font>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
+      <property name="text">
+       <string>Dis</string>
       </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_31">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>76</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Bitstream Charter</family>
-         <pointsize>12</pointsize>
-         <weight>9</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Tool:</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="tool_in_spindle_lb">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>10</y>
-         <width>71</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Bitstream Charter</family>
-         <pointsize>12</pointsize>
-         <weight>9</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="text">
-        <string>0</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_probe">
@@ -1580,7 +1874,7 @@ on / off
       </property>
       <layout class="QGridLayout" name="gridLayout_14">
        <property name="sizeConstraint">
-        <enum>QLayout::SetMaximumSize</enum>
+        <enum>QLayout::SetDefaultConstraint</enum>
        </property>
        <property name="leftMargin">
         <number>6</number>
@@ -1595,7 +1889,7 @@ on / off
         <number>6</number>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="probe_XminusYplus">
@@ -1630,8 +1924,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_right_front_out&gt; call</string>
          </property>
         </widget>
        </item>
@@ -1667,9 +1964,6 @@ on / off
            <pointsize>12</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -1712,8 +2006,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_left_front_out&gt; call</string>
          </property>
         </widget>
        </item>
@@ -1749,9 +2046,6 @@ on / off
            <pointsize>12</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -1794,9 +2088,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -1837,9 +2128,6 @@ on / off
            <pointsize>12</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -1882,8 +2170,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_right_back_out&gt; call</string>
          </property>
         </widget>
        </item>
@@ -1919,9 +2210,6 @@ on / off
            <pointsize>12</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -1964,8 +2252,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_left_back_out&gt; call</string>
          </property>
         </widget>
        </item>
@@ -2006,7 +2297,7 @@ on / off
         <number>6</number>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="probe_inXminusYplus">
@@ -2041,8 +2332,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_right_front_in&gt; call</string>
          </property>
         </widget>
        </item>
@@ -2078,9 +2372,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2123,8 +2414,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_left_front_in&gt; call</string>
          </property>
         </widget>
        </item>
@@ -2160,9 +2454,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2205,9 +2496,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2248,9 +2536,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2293,8 +2578,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_right_back_in&gt; call</string>
          </property>
         </widget>
        </item>
@@ -2330,9 +2618,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2375,8 +2660,11 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
+         <property name="function" stdset="0">
+          <string>mdi</string>
+         </property>
+         <property name="command" stdset="0">
+          <string>o&lt;c_left_back_in&gt; call</string>
          </property>
         </widget>
        </item>
@@ -2417,7 +2705,7 @@ on / off
         <number>6</number>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="probe_p_lx_in">
@@ -2451,9 +2739,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2496,9 +2781,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2540,9 +2822,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2583,9 +2862,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2632,7 +2908,7 @@ on / off
         <number>6</number>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="probe_p_angle_x_plus">
@@ -2666,9 +2942,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2711,9 +2984,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2755,9 +3025,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2798,9 +3065,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2847,7 +3111,7 @@ on / off
         <number>6</number>
        </property>
        <property name="spacing">
-        <number>3</number>
+        <number>1</number>
        </property>
        <item row="0" column="0">
         <widget class="QPushButton" name="probe_p_angle_y_minus_flip">
@@ -2881,9 +3145,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -2926,9 +3187,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -2970,9 +3228,6 @@ on / off
            <kerning>false</kerning>
           </font>
          </property>
-         <property name="text">
-          <string/>
-         </property>
          <property name="function" stdset="0">
           <string>mdi</string>
          </property>
@@ -3013,9 +3268,6 @@ on / off
            <pointsize>9</pointsize>
            <kerning>false</kerning>
           </font>
-         </property>
-         <property name="text">
-          <string/>
          </property>
          <property name="function" stdset="0">
           <string>mdi</string>
@@ -3151,7 +3403,7 @@ on / off
         <string>Set coordinate offset angle after probing.</string>
        </property>
        <property name="text">
-        <string>Set Angle</string>
+        <string>Set &lt;</string>
        </property>
        <property name="function" stdset="0">
         <string>mdi</string>
@@ -3213,7 +3465,7 @@ on / off
         <string>Return Coordinates to zero after angle offset.</string>
        </property>
        <property name="text">
-        <string>Zero Ang.</string>
+        <string>Zero &lt;</string>
        </property>
        <property name="function" stdset="0">
         <string>mdi</string>
@@ -3246,6 +3498,31 @@ on / off
 ENABLE</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="probe_workpiece_height">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>630</y>
+        <width>65</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>43</width>
+        <height>43</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="function" stdset="0">
+       <string>mdi</string>
+      </property>
+      <property name="command" stdset="0">
+       <string>o&lt;p_top&gt; call</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_tools">
      <property name="font">
@@ -3273,7 +3550,7 @@ ENABLE</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_feeds">
        <property name="font">
@@ -3394,9 +3671,9 @@ ENABLE</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -3457,23 +3734,22 @@ ENABLE</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>20</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
          <property name="text">
-          <string>HX</string>
+          <string>*</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3481,20 +3757,19 @@ ENABLE</string>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="label_x">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -3517,7 +3792,7 @@ ENABLE</string>
           <font>
            <family>DSEG7 Modern</family>
            <pointsize>20</pointsize>
-           <weight>63</weight>
+           <weight>99</weight>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>false</kerning>
@@ -3542,23 +3817,22 @@ ENABLE</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>20</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
          <property name="text">
-          <string>HY</string>
+          <string>*</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3566,20 +3840,19 @@ ENABLE</string>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_y">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -3602,7 +3875,7 @@ ENABLE</string>
           <font>
            <family>DSEG7 Modern</family>
            <pointsize>20</pointsize>
-           <weight>63</weight>
+           <weight>99</weight>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>false</kerning>
@@ -3627,23 +3900,22 @@ ENABLE</string>
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>20</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
          </property>
          <property name="text">
-          <string>HZ</string>
+          <string>*</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3651,20 +3923,19 @@ ENABLE</string>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_z">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>51</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
-           <family>Bitstream Charter</family>
-           <pointsize>12</pointsize>
-           <weight>9</weight>
-           <italic>false</italic>
-           <bold>false</bold>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
           </font>
          </property>
          <property name="text">
@@ -3687,7 +3958,7 @@ ENABLE</string>
           <font>
            <family>DSEG7 Modern</family>
            <pointsize>20</pointsize>
-           <weight>63</weight>
+           <weight>99</weight>
            <italic>false</italic>
            <bold>true</bold>
            <kerning>false</kerning>
@@ -3704,251 +3975,6 @@ ENABLE</string>
          </property>
          <property name="precision" stdset="0">
           <string>4</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_8">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>0</y>
-        <width>71</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Monospace</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>Home</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_6">
-       <property name="topMargin">
-        <number>21</number>
-       </property>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="home_all_pb">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>All</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="home_pb_0">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="home_pb_1">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="home_pb_2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Z</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_17">
-      <property name="geometry">
-       <rect>
-        <x>370</x>
-        <y>0</y>
-        <width>70</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Monospace</family>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>UnHome</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_7">
-       <property name="topMargin">
-        <number>21</number>
-       </property>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="unhome_all_pb_2">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>All</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="unhome_pb_4">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="unhome_pb_5">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QPushButton" name="unhome_pb_3">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Z</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-     <widget class="QGroupBox" name="groupBox_3">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>0</y>
-        <width>71</width>
-        <height>221</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Monospace</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="title">
-       <string>T-Off</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_9">
-       <property name="topMargin">
-        <number>21</number>
-       </property>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="touchoff_pb_y">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Y</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QPushButton" name="touchoff_pb_x">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>X</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="touchoff_pb_z">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Z</string>
          </property>
         </widget>
        </item>
@@ -3993,7 +4019,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4018,7 +4044,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4049,7 +4075,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4077,7 +4103,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4105,7 +4131,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4136,7 +4162,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4164,7 +4190,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4195,7 +4221,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4229,7 +4255,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4260,7 +4286,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4291,7 +4317,7 @@ ENABLE</string>
         <font>
          <family>Bitstream Charter</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4324,7 +4350,7 @@ ENABLE</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4346,7 +4372,7 @@ Z+</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4368,7 +4394,7 @@ Z-</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4390,7 +4416,7 @@ Y+</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4412,7 +4438,7 @@ Y-</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4434,7 +4460,7 @@ X-</string>
     <property name="font">
      <font>
       <family>Monospace</family>
-      <pointsize>16</pointsize>
+      <pointsize>20</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -4455,9 +4481,9 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -4483,9 +4509,9 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -4508,9 +4534,9 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -4536,9 +4562,9 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -4554,7 +4580,7 @@ X+</string>
     <property name="geometry">
      <rect>
       <x>1280</x>
-      <y>380</y>
+      <y>680</y>
       <width>190</width>
       <height>191</height>
      </rect>
@@ -4734,7 +4760,7 @@ X+</string>
     <property name="geometry">
      <rect>
       <x>1280</x>
-      <y>680</y>
+      <y>380</y>
       <width>190</width>
       <height>191</height>
      </rect>
@@ -4755,32 +4781,6 @@ X+</string>
      <property name="topMargin">
       <number>21</number>
      </property>
-     <item row="0" column="0">
-      <widget class="QPushButton" name="view_p_pb">
-       <property name="font">
-        <font>
-         <family>Monospace</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>P</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="1">
-      <widget class="QPushButton" name="view_x_pb">
-       <property name="font">
-        <font>
-         <family>Monospace</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>X</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QPushButton" name="view_y_pb">
        <property name="font">
@@ -4791,19 +4791,6 @@ X+</string>
        </property>
        <property name="text">
         <string>Y</string>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="1">
-      <widget class="QPushButton" name="view_y2_pb">
-       <property name="font">
-        <font>
-         <family>Monospace</family>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Y2</string>
        </property>
       </widget>
      </item>
@@ -4820,6 +4807,32 @@ X+</string>
        </property>
       </widget>
      </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="view_y2_pb">
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Y2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QPushButton" name="view_clear_pb">
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>CLEAR PLOT</string>
+       </property>
+      </widget>
+     </item>
      <item row="2" column="1">
       <widget class="QPushButton" name="view_z2_pb">
        <property name="font">
@@ -4833,8 +4846,8 @@ X+</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="0" colspan="2">
-      <widget class="QPushButton" name="view_clear_pb">
+     <item row="0" column="0">
+      <widget class="QPushButton" name="view_x_pb">
        <property name="font">
         <font>
          <family>Monospace</family>
@@ -4842,7 +4855,20 @@ X+</string>
         </font>
        </property>
        <property name="text">
-        <string>CLEAR</string>
+        <string>X</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="view_p_pb">
+       <property name="font">
+        <font>
+         <family>Monospace</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>P</string>
        </property>
       </widget>
      </item>
@@ -4854,7 +4880,7 @@ X+</string>
       <x>1480</x>
       <y>630</y>
       <width>441</width>
-      <height>164</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="font">
@@ -4877,9 +4903,9 @@ X+</string>
       <widget class="QLabel" name="label_6">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4909,9 +4935,9 @@ X+</string>
       <widget class="QLabel" name="label_10">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4928,9 +4954,9 @@ X+</string>
       <widget class="QLabel" name="label_11">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4945,11 +4971,11 @@ X+</string>
      </item>
      <item row="2" column="0" colspan="3">
       <widget class="QSlider" name="jog_vel_sl">
-       <property name="font">
-        <font>
-         <family>Monospace</family>
-         <pointsize>12</pointsize>
-        </font>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>30</height>
+        </size>
        </property>
        <property name="value">
         <number>10</number>
@@ -4969,9 +4995,9 @@ X+</string>
       <widget class="QLabel" name="min_jog_vel_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -4988,9 +5014,9 @@ X+</string>
       <widget class="QLabel" name="max_jog_vel_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -5013,9 +5039,9 @@ X+</string>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -5237,9 +5263,9 @@ X+</string>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -5336,21 +5362,21 @@ X+</string>
       <rect>
        <x>230</x>
        <y>150</y>
-       <width>101</width>
+       <width>111</width>
        <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Bitstream Charter</family>
+       <family>Monospace</family>
        <pointsize>12</pointsize>
-       <weight>9</weight>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text">
       <string>dir</string>
@@ -5364,24 +5390,24 @@ X+</string>
       <rect>
        <x>230</x>
        <y>130</y>
-       <width>101</width>
+       <width>111</width>
        <height>19</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Bitstream Charter</family>
+       <family>Monospace</family>
        <pointsize>12</pointsize>
-       <weight>9</weight>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text">
-      <string>speed</string>
+      <string>0</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
@@ -5455,21 +5481,21 @@ X+</string>
       <rect>
        <x>110</x>
        <y>150</y>
-       <width>101</width>
+       <width>111</width>
        <height>20</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>Bitstream Charter</family>
+       <family>Monospace</family>
        <pointsize>12</pointsize>
-       <weight>9</weight>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text">
       <string>speed_lb</string>
@@ -5489,9 +5515,9 @@ X+</string>
      </property>
      <property name="font">
       <font>
-       <family>Bitstream Charter</family>
+       <family>Monospace</family>
        <pointsize>12</pointsize>
-       <weight>9</weight>
+       <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
       </font>
@@ -5538,7 +5564,7 @@ X+</string>
       </font>
      </property>
      <property name="text">
-      <string>S Word</string>
+      <string>MDI S</string>
      </property>
     </widget>
    </widget>
@@ -5553,15 +5579,15 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="text">
-     <string>None</string>
+     <string>None.ngc</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -5584,9 +5610,9 @@ X+</string>
     </property>
     <property name="font">
      <font>
-      <family>Bitstream Charter</family>
+      <family>Monospace</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
@@ -5791,11 +5817,9 @@ X+</string>
       <widget class="QLabel" name="label_13">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5808,7 +5832,7 @@ X+</string>
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
        <property name="value">
@@ -5835,11 +5859,9 @@ X+</string>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5851,11 +5873,9 @@ X+</string>
       <widget class="QLabel" name="label_17">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5868,7 +5888,7 @@ X+</string>
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
        <property name="value">
@@ -5889,11 +5909,9 @@ X+</string>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5905,11 +5923,9 @@ X+</string>
       <widget class="QLabel" name="label_18">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5922,7 +5938,7 @@ X+</string>
        <property name="minimumSize">
         <size>
          <width>0</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
        <property name="value">
@@ -5943,11 +5959,9 @@ X+</string>
        </property>
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -5983,9 +5997,9 @@ X+</string>
       <widget class="QLabel" name="gcodes_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -6021,9 +6035,9 @@ X+</string>
       <widget class="QLabel" name="mcodes_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
+         <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
@@ -6083,11 +6097,9 @@ X+</string>
       <widget class="QLabel" name="label_7">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6099,11 +6111,9 @@ X+</string>
       <widget class="QLabel" name="label_8">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6115,11 +6125,9 @@ X+</string>
       <widget class="QLabel" name="label_28">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6131,11 +6139,9 @@ X+</string>
       <widget class="QLabel" name="task_state_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6147,11 +6153,9 @@ X+</string>
       <widget class="QLabel" name="task_mode_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6163,11 +6167,9 @@ X+</string>
       <widget class="QLabel" name="motion_mode_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6179,11 +6181,9 @@ X+</string>
       <widget class="QLabel" name="interp_state_lb">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6195,11 +6195,9 @@ X+</string>
       <widget class="QLabel" name="label_23">
        <property name="font">
         <font>
-         <family>Bitstream Charter</family>
+         <family>Monospace</family>
          <pointsize>12</pointsize>
-         <weight>9</weight>
          <italic>false</italic>
-         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -6500,6 +6498,34 @@ X+</string>
      <string>Run</string>
     </property>
    </widget>
+   <widget class="QFrame" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>740</y>
+      <width>104</width>
+      <height>119</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>104</width>
+      <height>119</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>119</width>
+      <height>119</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -6521,7 +6547,7 @@ X+</string>
      <font>
       <family>Bitstream Charter</family>
       <pointsize>12</pointsize>
-      <weight>9</weight>
+      <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
