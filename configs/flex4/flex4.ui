@@ -4903,6 +4903,479 @@ ENABLE</string>
        <property name="spacing">
         <number>0</number>
        </property>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_y_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Y</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_x_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>X</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="7" colspan="4">
+        <widget class="QLabel" name="dro_lb_y2n">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>+99.9999</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2" colspan="2">
+        <widget class="QLabel" name="label_61">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>DRO</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="7" colspan="4">
+        <widget class="QLabel" name="label_63">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>-Tool Rad</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="3">
+        <widget class="QLabel" name="dro_lb_x2">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>-99.9999</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="6">
+        <widget class="QDoubleSpinBox" name="doubleSpinBox_tool_dia">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>16</pointsize>
+          </font>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+         <property name="buttonSymbols">
+          <enum>QAbstractSpinBox::NoButtons</enum>
+         </property>
+         <property name="decimals">
+          <number>3</number>
+         </property>
+         <property name="singleStep">
+          <double>0.001000000000000</double>
+         </property>
+         <property name="function" stdset="0">
+          <string>set_var</string>
+         </property>
+         <property name="variable" stdset="0">
+          <string>3000</string>
+         </property>
+         <property name="input" stdset="0">
+          <string>number</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_y_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>30</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>26</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Z</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="5">
+        <widget class="QLabel" name="label_41">
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>  Dia</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5" colspan="2">
+        <widget class="QLabel" name="dro_lb_y2p">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>+99.9999</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5" colspan="2">
+        <widget class="QLabel" name="dro_lb_x2p">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>-99.9999</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="5" colspan="2">
+        <widget class="QLabel" name="label_62">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>30</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Monospace</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>+Tool Rad</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1" colspan="3">
+        <widget class="QLabel" name="dro_lb_z2">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>-12.3456</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="7" colspan="4">
+        <widget class="QLabel" name="dro_lb_x2n">
+         <property name="minimumSize">
+          <size>
+           <width>139</width>
+           <height>41</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>DSEG7 Modern</family>
+           <pointsize>17</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="text">
+          <string>-99.9999</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+         <property name="precision" stdset="0">
+          <string>4</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="0" colspan="2">
         <widget class="QLabel" name="label_60">
          <property name="sizePolicy">
@@ -4972,213 +5445,20 @@ ENABLE</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="4">
-        <widget class="QLabel" name="dro_lb_y2p">
-         <property name="minimumSize">
-          <size>
-           <width>139</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>DSEG7 Modern</family>
-           <pointsize>17</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string>+99.9999</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2" colspan="2">
-        <widget class="QLabel" name="label_61">
+       <item row="3" column="7" colspan="4">
+        <widget class="QPushButton" name="my_tool_rad_pb">
          <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
          <property name="minimumSize">
           <size>
-           <width>0</width>
-           <height>0</height>
+           <width>43</width>
+           <height>59</height>
           </size>
          </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>DRO</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="3">
-        <widget class="QDoubleSpinBox" name="doubleSpinBox_tool_dia">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>16</pointsize>
-          </font>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-         <property name="buttonSymbols">
-          <enum>QAbstractSpinBox::NoButtons</enum>
-         </property>
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="singleStep">
-          <double>0.001000000000000</double>
-         </property>
-         <property name="function" stdset="0">
-          <string>set_var</string>
-         </property>
-         <property name="variable" stdset="0">
-          <string>3000</string>
-         </property>
-         <property name="input" stdset="0">
-          <string>number</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QLabel" name="label_63">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>-Tool Rad</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4">
-        <widget class="QLabel" name="dro_lb_x2p">
-         <property name="minimumSize">
-          <size>
-           <width>139</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>DSEG7 Modern</family>
-           <pointsize>17</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string>-99.9999</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_y_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>26</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Y</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="4" colspan="2">
-        <widget class="QPushButton" name="tool_rad_pb">
          <property name="font">
           <font>
            <family>Monospace</family>
@@ -5190,194 +5470,6 @@ ENABLE</string>
          </property>
          <property name="checkable">
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="5">
-        <widget class="QLabel" name="dro_lb_y2n">
-         <property name="minimumSize">
-          <size>
-           <width>139</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>DSEG7 Modern</family>
-           <pointsize>17</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string>+99.9999</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" colspan="3">
-        <widget class="QLabel" name="dro_lb_x2">
-         <property name="minimumSize">
-          <size>
-           <width>139</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>DSEG7 Modern</family>
-           <pointsize>17</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string>-99.9999</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="3">
-        <widget class="QLabel" name="label_41">
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Dia:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QLabel" name="label_62">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>30</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>12</pointsize>
-           <weight>50</weight>
-           <italic>false</italic>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>+Tool Rad</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="5">
-        <widget class="QLabel" name="dro_lb_x2n">
-         <property name="minimumSize">
-          <size>
-           <width>139</width>
-           <height>41</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>DSEG7 Modern</family>
-           <pointsize>17</pointsize>
-           <weight>75</weight>
-           <italic>false</italic>
-           <bold>true</bold>
-           <kerning>false</kerning>
-          </font>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="text">
-          <string>-99.9999</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="precision" stdset="0">
-          <string>4</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_x_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>30</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Monospace</family>
-           <pointsize>26</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>X</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
@@ -7096,6 +7188,12 @@ X+</string>
     <property name="checkable">
      <bool>false</bool>
     </property>
+    <property name="open_text" stdset="0">
+     <string>ESTOP</string>
+    </property>
+    <property name="closed_text" stdset="0">
+     <string>CLOSED</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="power_pb">
     <property name="geometry">
@@ -7117,6 +7215,12 @@ X+</string>
     </property>
     <property name="checkable">
      <bool>false</bool>
+    </property>
+    <property name="on_text" stdset="0">
+     <string>ON</string>
+    </property>
+    <property name="off_text" stdset="0">
+     <string>OFF</string>
     </property>
    </widget>
    <widget class="QPushButton" name="optional_stop_pb">
